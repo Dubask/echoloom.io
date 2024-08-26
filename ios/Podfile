@@ -1,3 +1,4 @@
+platform :ios, '14.0' 
 require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
 require File.join(File.dirname(`node --print "require.resolve('react-native/package.json')"`), "scripts/react_native_pods")
 
@@ -28,14 +29,14 @@ self.define_singleton_method(use_autolinking_method_symbol) do |*args|
   end
 end
 
-platform :ios, podfile_properties['ios.deploymentTarget'] || '13.4'
+# platform :ios, podfile_properties['ios.deploymentTarget'] || '13.0'
 install! 'cocoapods',
   :deterministic_uuids => false
 
 prepare_react_native_project!
 
 # Apply use_modular_headers! globally to resolve issues with specific Swift pods
-use_modular_headers!
+use_frameworks! :linkage => :static
 
 target 'echoloom' do
   use_expo_modules!
