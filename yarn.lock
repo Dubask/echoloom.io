@@ -2192,11 +2192,6 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
-"@stripe/stripe-react-native@^0.38.4":
-  version "0.38.4"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-react-native/-/stripe-react-native-0.38.4.tgz#83470fa10bec0900c80ae967c4c1d56ab8c7a64f"
-  integrity sha512-uPLgr5tRC5GTmqqGdqteA2mbuR682QYHsjWAvqVe+creu1KOHm13VhP1FAbXybWCdgtPEQsDS5X8XEVWy5pN2A==
-
 "@types/hammerjs@^2.0.36":
   version "2.0.45"
   resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.45.tgz#ffa764bb68a66c08db6efb9c816eb7be850577b1"
@@ -6193,11 +6188,6 @@ react-native-gesture-handler@~2.16.1:
     invariant "^2.2.4"
     lodash "^4.17.21"
     prop-types "^15.7.2"
-
-react-native-paypal@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-paypal/-/react-native-paypal-4.1.0.tgz#ac3fb5b49f22a36419396f58f56e7e66c82c52f2"
-  integrity sha512-hcezJzbF1TBHm9ejfGkf3g8WsskqV9dy8lvyw4gtTed7MUYA1O8bkotnJgXRnp3Z7tZLYyEm+kBvBDrKpL6SEw==
 
 react-native-reanimated@~3.10.1:
   version "3.10.1"
