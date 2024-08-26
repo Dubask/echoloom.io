@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextField, Button } from "react-native-ui-lib";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useAuthStore } from "../../stores/useStores";
-// import { firebaseAuth } from "../../services/firebase/config";
+import { firebaseAuth } from "../../services/firebase/config";
 import { AuthStackParamList } from "../../navigation/unAuthenticated/auth/auth-navigator";
 
 type LoginScreenProps = NativeStackScreenProps<AuthStackParamList, "Login">;
@@ -14,20 +14,20 @@ export const LoginScreen = ({ navigation }: LoginScreenProps) => {
 
   const handleLogin = async () => {
     try {
-      // const res = await firebaseAuth.signInWithEmailAndPassword(
-      //   email,
-      //   password
-      // );
-      // const user = res.user;
-      // if (user) {
-      //   const token = await user.getIdToken();
-      //   const userId = user.uid;
-      //   const email = user.email;
-      //   setUserData({ userId, token, email });
-      // }
+      const res = await firebaseAuth.signInWithEmailAndPassword(
+        email,
+        password
+      );
+      const user = res.user;
+      if (user) {
+        const token = await user.getIdToken();
+        const userId = user.uid;
+        const email = user.email;
+        setUserData({ userId, token, email });
+      }
     } catch (error: any) {
       console.log(error);
-      // setError(error.message);
+      // setError(error.message)
     }
   };
 

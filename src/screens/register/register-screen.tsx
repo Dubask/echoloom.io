@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { View, TextField, Button, Text } from "react-native-ui-lib";
 import { AuthStackParamList } from "../../navigation/unAuthenticated/auth/auth-navigator";
-// import { firebaseAuth } from "../../services/firebase/config";
+import { firebaseAuth } from "../../services/firebase/config";
 
 type RegisterScreenProps = NativeStackScreenProps<
   AuthStackParamList,
@@ -21,7 +21,7 @@ export const RegisterScreen = ({ navigation }: RegisterScreenProps) => {
     }
 
     try {
-      // await firebaseAuth.createUserWithEmailAndPassword(email, password);
+      await firebaseAuth.createUserWithEmailAndPassword(email, password);
     } catch (error: any) {
       console.log(error.message);
     }

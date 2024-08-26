@@ -26,6 +26,15 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
+      "firebase": {
+        "apiKey": "AIzaSyD28e1KaY6Vymkxy4KO2iamlztetvIAQqw",
+        "authDomain": "your-auth-domain",
+        "projectId": "echoloom-3c15b",
+        "storageBucket": "your-storage-bucket",
+        "messagingSenderId": "your-messaging-sender-id",
+        "appId": "app-1-577589621095-ios-fccc12438184c82b88bfc2",
+        "databaseURL": "https://echoloom-3c15b.firebaseio.com"
+      },
       "eas": {
         "projectId": "6f1253ae-2b7b-43f6-be48-1e6bcc2e5aed"
       }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "577589621095",
+    "project_id": "echoloom-3c15b",
+    "storage_bucket": "echoloom-3c15b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577589621095:android:9b8675c3aa91248388bfc2",
+        "android_client_info": {
+          "package_name": "com.mycompany.echoloom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD28e1KaY6Vymkxy4KO2iamlztetvIAQqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-// import { HomeScreen } from "../../../screens/home/home-screen";
-// import { SettingsScreen } from "../../../screens/settings/settings-screen";
 import Icon from "react-native-vector-icons/FontAwesome";
-// import { ProfileScreen } from "../../../screens/profile/profile-screen";
+import { HomeScreen } from "../../../screens/home/home-screen";
+import { SettingsScreen } from "../../../screens/settings/settings-screen";
+import { ProfileScreen } from "../../../screens/profile/profile-screen";
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -13,15 +13,15 @@ const SettingsStack = createNativeStackNavigator();
 const HomeStackNavigator = () => (
   <HomeStack.Navigator screenOptions={{ headerShown: false }}>
     <></>
-    {/* <HomeStack.Screen name="HomeScreen" component={HomeScreen} /> */}
+    <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
   </HomeStack.Navigator>
 );
 
 const SettingsStackNavigator = () => (
   <SettingsStack.Navigator screenOptions={{ headerShown: false }}>
     <></>
-    {/* <SettingsStack.Screen name="SettingsScreen" component={SettingsScreen} />
-    <SettingsStack.Screen name="ProfileScreen" component={ProfileScreen} /> */}
+    <SettingsStack.Screen name="SettingsScreen" component={SettingsScreen} />
+    <SettingsStack.Screen name="ProfileScreen" component={ProfileScreen} />
   </SettingsStack.Navigator>
 );
 
