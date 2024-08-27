@@ -1,4 +1,11 @@
-add form errors
+go to verify email screen for non premium
+or to success screen for premium
+
+persisted for store
+
+delete user option
+login with apple (face id) and google
+
 add modals (optional for now)
 testing
 envs
