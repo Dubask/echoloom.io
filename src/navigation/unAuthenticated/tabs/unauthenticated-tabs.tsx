@@ -6,12 +6,17 @@ import { WelcomeScreen } from "../../../screens/welcome/welcome-screen";
 
 const Tab = createBottomTabNavigator();
 
+export type UnAuthenticatedStackParamList = {
+  Welcome: undefined;
+  User: undefined;
+};
+
 export const UnAuthenticatedTabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="Welcome"
-        component={WelcomeScreen}
+        component={WelcomeScreen as any}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Icon name="home" color={color} size={size} />

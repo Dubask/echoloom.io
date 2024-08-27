@@ -32,7 +32,7 @@ export const LoginScreen = ({ navigation }: LoginScreenProps) => {
   };
 
   return (
-    <View flex padding-20 bg-white>
+    <View flex padding-20 bg-white marginT-50>
       <Text text40BO marginB-30>
         Login
       </Text>
