@@ -28,7 +28,7 @@ export const RegisterScreen = ({ navigation }: RegisterScreenProps) => {
   };
 
   return (
-    <View flex padding-20 bg-white>
+    <View flex padding-20 bg-white marginT-50>
       <Text text40BO marginB-30>
         Register
       </Text>

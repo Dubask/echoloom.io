@@ -6,6 +6,11 @@ import { WelcomeScreen } from "../../../screens/welcome/welcome-screen";
 
 const Tab = createBottomTabNavigator();
 
+export type UnAuthenticatedStackParamList = {
+  Welcome: undefined;
+  User: undefined;
+};
+
 export const UnAuthenticatedTabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
