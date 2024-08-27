@@ -1,5 +1,6 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { StateCreator, create } from "zustand";
+import { persist, PersistOptions } from "zustand/middleware";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type DefaultValue = string | null;
 
@@ -8,6 +9,7 @@ type setUserDataProps = {
   token?: DefaultValue;
   email?: DefaultValue;
 };
+
 interface AuthState {
   userId: DefaultValue;
   token: DefaultValue;
@@ -16,23 +18,37 @@ interface AuthState {
   logout: () => void;
 }
 
-export const useAuthStore = create<AuthState>((set) => ({
-  isAuthenticated: false,
-  userId: null,
-  token: null,
-  email: null,
-  setUserData: ({ userId = null, token = null, email = null } = {}) => {
-    set({
-      userId,
-      token,
-      email,
-    });
-  },
-  logout: () => {
-    set({
+type Persist = (
+  config: StateCreator<AuthState>,
+  options: PersistOptions<AuthState>
+) => StateCreator<AuthState>;
+
+const useAuthStore = create<AuthState>(
+  (persist as Persist)(
+    (set) => ({
       userId: null,
       token: null,
       email: null,
-    });
-  },
-}));
+      setUserData: ({ userId = null, token = null, email = null } = {}) => {
+        set({
+          userId,
+          token,
+          email,
+        });
+      },
+      logout: () => {
+        set({
+          userId: null,
+          token: null,
+          email: null,
+        });
+      },
+    }),
+    {
+      name: "auth-storage",
+      getStorage: () => AsyncStorage,
+    }
+  )
+);
+
+export { useAuthStore };

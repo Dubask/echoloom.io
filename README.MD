@@ -1,24 +1,34 @@
-go to verify email screen for non premium
-or to success screen for premium
-
-persisted for store
-
+friday:
+proper setting page (the basic)
+user profile
 delete user option
-login with apple (face id) and google
+login with apple
 
-add modals (optional for now)
-testing
-envs
+saturday:
 analytics & crash reports
 notifications
+
+next week:
+payments (apple)
+subscription page
+money back gurentee - 1 week
+envs
+add modals (optional for now)
+success page /modal (after register)
+
+next week:
+jest tests on most
 better bottom navigator
-payments
 create basic api for firestore
 set pipe for store
 checl bundle and efficiancy
 
-add propesr policy
-proper setting page (the basic)
-user profile
-
+do for android:
 check working in android
+(face id) with google
+payments google
+payments paypal
+
+create boilerplate installer for this app
+
+start creating the real app (echoloom)
