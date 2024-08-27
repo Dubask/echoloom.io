@@ -2537,6 +2537,8 @@ PODS:
   - ReactNativeUiLib (4.2.0):
     - React
   - RecaptchaInterop (100.0.0)
+  - RNCAsyncStorage (2.0.0):
+    - React-Core
   - RNFastImage (8.6.3):
     - React-Core
     - SDWebImage (~> 5.11.1)
@@ -2720,6 +2722,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeUiLib (from `../node_modules/react-native-ui-lib`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNFastImage (from `../node_modules/react-native-fast-image`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
@@ -2898,6 +2901,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeUiLib:
     :path: "../node_modules/react-native-ui-lib"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNFastImage:
     :path: "../node_modules/react-native-fast-image"
   RNFBApp:
@@ -3008,6 +3013,7 @@ SPEC CHECKSUMS:
   ReactCommon: f79ae672224dc1e6c2d932062176883c98eebd57
   ReactNativeUiLib: deb877cd9b36cf5cad3c72b226bb330060681351
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  RNCAsyncStorage: d35c79ffba52c1013013e16b1fc295aec2feabb6
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNFBApp: 2f83756f4d8be2859af5e2cf54130c20e380119d
   RNFBAuth: ae6e6195e2cf783f8ad1977186925c61358c8ec9
