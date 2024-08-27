@@ -1,35 +1,42 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { View } from "react-native-ui-lib";
-import { UnAuthenticatedStackParamList } from "../../navigation/unAuthenticated/tabs/unauthenticated-tabs";
 import { ImageGallery } from "./welcome-gallery/image-gallery/image-gallery";
 import { VideoGallery } from "./welcome-gallery/video-gallery/video-gallery";
 import { GALLERY_ASSETS } from "./welcome-gallery/const";
 import { GalleryControllers } from "./welcome-gallery/gallery-controllers/gallery-controllers";
+import { AuthStackParamList } from "../../navigation/unAuthenticated/auth/auth-navigator";
+import { useFocusEffect } from "@react-navigation/native";
+import { UnAuthenticatedStackParamList } from "../../navigation/unAuthenticated/tabs/unauthenticated-tabs";
 
 type NavigationProps = NativeStackScreenProps<
-  UnAuthenticatedStackParamList,
+  UnAuthenticatedStackParamList & AuthStackParamList,
   "Welcome"
 >;
 
 export const WelcomeScreen = ({ navigation }: NavigationProps) => {
-  const [currnetGalleryIndex, setCurrentGalleryIndex] = useState(0);
+  const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
+  const isLastItem = currentGalleryIndex === GALLERY_ASSETS.length - 1;
+  const isFirstItem = currentGalleryIndex === 0;
+  const { type, asset } = GALLERY_ASSETS[currentGalleryIndex];
 
-  const isLastItem = currnetGalleryIndex === GALLERY_ASSETS.length - 1;
-  const isFirstItem = currnetGalleryIndex === 0;
-  const currentGalleryItem = GALLERY_ASSETS[currnetGalleryIndex];
-  const isVideo = currentGalleryItem.type === "video";
-  const isImage = currentGalleryItem.type === "image";
+  useFocusEffect(
+    useCallback(() => {
+      return () => {
+        setCurrentGalleryIndex(0);
+      };
+    }, [])
+  );
 
   const onNext = () => {
     if (isLastItem) {
-      navigation.navigate("Welcome");
+      navigation.navigate("Register");
     } else {
-      setCurrentGalleryIndex(currnetGalleryIndex + 1);
+      setCurrentGalleryIndex(currentGalleryIndex + 1);
     }
   };
 
-  const handleBack = () => setCurrentGalleryIndex(currnetGalleryIndex - 1);
+  const handleBack = () => setCurrentGalleryIndex(currentGalleryIndex - 1);
 
   return (
     <View flex>
@@ -39,18 +46,15 @@ export const WelcomeScreen = ({ navigation }: NavigationProps) => {
         handleBack={handleBack}
       />
       <View flex>
-        {isImage && (
+        {type === "image" && (
           <ImageGallery
             buttonText={isLastItem ? "Let's Try" : "Next"}
-            currentGalleryItem={currentGalleryItem.asset}
+            currentGalleryItem={asset}
             onPress={onNext}
           />
         )}
-        {isVideo && (
-          <VideoGallery
-            handleNext={onNext}
-            currentGalleryItem={currentGalleryItem.asset}
-          />
+        {type === "video" && (
+          <VideoGallery handleNext={onNext} currentGalleryItem={asset} />
         )}
       </View>
     </View>

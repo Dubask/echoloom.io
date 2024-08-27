@@ -16,7 +16,7 @@ export const UnAuthenticatedTabs = () => {
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="Welcome"
-        component={WelcomeScreen}
+        component={WelcomeScreen as any}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Icon name="home" color={color} size={size} />
