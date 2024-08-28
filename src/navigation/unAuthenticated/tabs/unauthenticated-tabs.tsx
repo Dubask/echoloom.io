@@ -1,14 +1,14 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { AuthNavigator } from "../auth/auth-navigator";
+import { AuthNavigator, AuthStackParamList } from "../auth/auth-navigator";
 import { WelcomeScreen } from "../../../screens/welcome/welcome-screen";
 
 const Tab = createBottomTabNavigator();
 
 export type UnAuthenticatedStackParamList = {
   Welcome: undefined;
-  User: undefined;
+  Auth: { screen: keyof AuthStackParamList };
 };
 
 export const UnAuthenticatedTabs = () => {
@@ -24,7 +24,7 @@ export const UnAuthenticatedTabs = () => {
         }}
       />
       <Tab.Screen
-        name="User"
+        name="Auth"
         component={AuthNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (

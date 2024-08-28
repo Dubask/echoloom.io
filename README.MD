@@ -1,8 +1,10 @@
 friday:
+run on real device
+login with apple
 proper setting page (the basic)
 user profile
 delete user option
-login with apple
+apple pay
 
 saturday:
 analytics & crash reports
