@@ -1,27 +1,38 @@
-friday:
-proper setting page (the basic)
-user profile
-delete user option
-login with apple
+Basic app template:
 
-saturday:
-analytics & crash reports
-notifications
+Friday:
 
-next week:
-payments (apple)
-subscription page
-money back gurentee - 1 week
-envs
-add modals (optional for now)
-success page /modal (after register)
+- Ask to enter name if none exists (how would you like to be called?)
+- Save in store
+- Logout (+ remove tokens)
+- Clear store
+- Add validation to firebase (pass length, regex, email etc)
+- Proper setting page (the basic)
+- User profile
+- Delete user option
+- Apple pay
 
-next week:
-jest tests on most
-better bottom navigator
-create basic api for firestore
-set pipe for store
-checl bundle and efficiancy
+Saturday:
+
+- Analytics & crash reports
+- Notifications
+- Envs
+
+Next week:
+
+- Payments (apple)
+- Subscription page
+- Money back gurentee - 1 week
+- Add modals (optional for now)
+- Success page /modal (after register)
+
+Next week:
+
+- Jest tests on most
+- Better bottom navigator
+- Create basic api for firestore
+- Set pipe for store
+- Check bundle and efficiancy
 
 do for android:
 check working in android

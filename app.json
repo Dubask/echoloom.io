@@ -11,8 +11,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": ["expo-apple-authentication"],
     "ios": {
       "supportsTablet": true,
+      "usesAppleSignIn": true,
       "bundleIdentifier": "com.mycompany.echoloom"
     },
     "android": {
@@ -28,11 +30,11 @@
     "extra": {
       "firebase": {
         "apiKey": "AIzaSyD28e1KaY6Vymkxy4KO2iamlztetvIAQqw",
-        "authDomain": "your-auth-domain",
+        "authDomain": "https://echoloom-3c15b.firebaseapp.com/__/auth/handler",
         "projectId": "echoloom-3c15b",
         "storageBucket": "your-storage-bucket",
         "messagingSenderId": "your-messaging-sender-id",
-        "appId": "app-1-577589621095-ios-fccc12438184c82b88bfc2",
+        "appId": "app-1-577589621095-ios-fccc12438184c82",
         "databaseURL": "https://echoloom-3c15b.firebaseio.com"
       },
       "eas": {

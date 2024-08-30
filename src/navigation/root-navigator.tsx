@@ -8,6 +8,7 @@ const RootStack = createNativeStackNavigator();
 
 export const RootNavigator = () => {
   const { userId } = useAuthStore();
+  console.log("RootNavigator ~ userId:", userId);
 
   return (
     <RootStack.Navigator screenOptions={{ headerShown: false }}>

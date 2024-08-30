@@ -3,17 +3,20 @@ import { persist, PersistOptions } from "zustand/middleware";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type DefaultValue = string | null;
+type authType = "email" | "apple" | "google" | null;
 
 type setUserDataProps = {
   userId?: DefaultValue;
   token?: DefaultValue;
   email?: DefaultValue;
+  authType?: authType;
 };
 
 interface AuthState {
   userId: DefaultValue;
   token: DefaultValue;
   email: DefaultValue;
+  authType: authType;
   setUserData: ({ userId, token, email }: setUserDataProps) => void;
   logout: () => void;
 }
@@ -29,11 +32,18 @@ const useAuthStore = create<AuthState>(
       userId: null,
       token: null,
       email: null,
-      setUserData: ({ userId = null, token = null, email = null } = {}) => {
+      authType: null,
+      setUserData: ({
+        userId = null,
+        token = null,
+        email = null,
+        authType = null,
+      } = {}) => {
         set({
           userId,
           token,
           email,
+          authType,
         });
       },
       logout: () => {
@@ -41,6 +51,7 @@ const useAuthStore = create<AuthState>(
           userId: null,
           token: null,
           email: null,
+          authType: null,
         });
       },
     }),
